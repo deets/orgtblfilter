@@ -9,6 +9,7 @@ setup(
     author_email = "deets@web.de",
     description = "A sphinx extension to pre-process orgtbl-mode tables to sphinx tables",
     license = "BSD",
+    url="https://github.com/deets/orgtblfilter",
     requires=["sphinx"],
     keywords = "sphinx extension",
     classifiers=[
