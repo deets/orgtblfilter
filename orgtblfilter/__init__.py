@@ -27,9 +27,24 @@ class LineSack(list):
 
 class TableSack(list):
     def rewrite(self):
-        for line in self:
+
+        skip_next = False
+        
+        for i in xrange(len(self)):
+            if skip_next:
+                skip_next = False
+                continue
+            line = self[i]
             if is_separator(line):
-                yield "+" + line[1:-1] + "+"
+                try:
+                    if is_separator(self[i+1]):
+                        yield "+" + line[1:-1].replace("-", "=") + "+"
+                        skip_next = True
+                except IndexError:
+                    pass
+                # we didn't yield this separator already, so do it now
+                if not skip_next:
+                    yield "+" + line[1:-1] + "+"
             else:
                 yield line
                 

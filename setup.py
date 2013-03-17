@@ -8,8 +8,18 @@ setup(
     author = "Diez B. Roggisch",
     author_email = "deets@web.de",
     description = "A sphinx extension to pre-process orgtbl-mode tables to sphinx tables",
-    license = "PSF",
+    license = "BSD",
+    requires=["sphinx"],
     keywords = "sphinx extension",
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python',
+        'Topic :: Documentation',
+        'Topic :: Utilities',
+    ],    
     entry_points = {
         'console_scripts': [
         ],

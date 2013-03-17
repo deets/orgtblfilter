@@ -68,3 +68,38 @@ Again a newline."""
     output_text = rewrite(input_text)
     assert output_text == expected, output_text
     
+
+
+def test_header_rewriting():
+    input_text = """This is a demo text
+
+After a newline, another newline comes and then a simple table
+
+|------+--------+--------------------------------|
+| Key  | Type   | Description                    |
+|------+--------+--------------------------------|
+|------+--------+--------------------------------|
+| ip   | string | IP-address of the ROD4 scanner |
+| port | int    | Port of the ROD4 scanner       |
+|------+--------+--------------------------------|
+
+Again a newline."""
+
+
+    expected = """This is a demo text
+
+After a newline, another newline comes and then a simple table
+
++------+--------+--------------------------------+
+| Key  | Type   | Description                    |
++======+========+================================+
+| ip   | string | IP-address of the ROD4 scanner |
+| port | int    | Port of the ROD4 scanner       |
++------+--------+--------------------------------+
+
+Again a newline."""
+
+    
+    output_text = rewrite(input_text)
+    assert output_text == expected, output_text
+    
